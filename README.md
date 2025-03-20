@@ -72,12 +72,7 @@ Or skip directly to next part.
 
 ### 5. Explore the demo
 
-[http://localhost:8501/](http://localhost:8501/)
-
-[![Watch the demo video](./diagrams/screenshot.png)](https://github.com/user-attachments/assets/f3a67538-5733-45eb-9dce-2ac8f2fe1237)
-
-[Demo Video File](./diagrams/streamlit-app-2025-03-18-23-03-32.mp4)
-
+[Demo](./diagrams/demo.mp4)
 
 ## Contributing (Committing changes)
 
