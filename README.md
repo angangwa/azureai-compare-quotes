@@ -72,6 +72,8 @@ Or skip directly to next part.
 
 ### 5. Explore the demo
 
+[http://localhost:8501/](http://localhost:8501/)
+
 [Demo](./diagrams/demo.mp4)
 
 ## Contributing (Committing changes)
