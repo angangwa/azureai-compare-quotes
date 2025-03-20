@@ -1,4 +1,5 @@
 """Functionality to render the Completion History tab in the Streamlit app."""
+
 import streamlit as st
 from utils.file_helpers import rename_completion, delete_completion, load_completions
 from utils.formatting import format_timestamp, get_friendly_completion_name

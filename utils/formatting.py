@@ -1,4 +1,5 @@
 """Utility functions for formatting strings and timestamps."""
+
 from datetime import datetime
 
 

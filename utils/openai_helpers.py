@@ -1,4 +1,5 @@
 """Azure OpenAI Helpers"""
+
 import os
 import streamlit as st
 from openai import AzureOpenAI

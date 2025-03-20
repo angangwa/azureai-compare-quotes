@@ -1,4 +1,5 @@
 """Functions for extracting text from various document types."""
+
 import os
 import json
 import html2text
