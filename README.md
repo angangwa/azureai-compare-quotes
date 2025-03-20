@@ -26,6 +26,8 @@ To enable Azure Document Intelligence:
 2. Add the endpoint and API key to your `.env` file (see quick start section)
 3. The app will automatically detect and use Document Intelligence if available
 
+![screenshot](./diagrams/screenshot.png)
+
 ## Quick Start (commands for git bash on Windows)
 
 ### 1. Create `.env` file locally
@@ -91,7 +93,13 @@ Or skip directly to next part.
 
 [http://localhost:8501/](http://localhost:8501/)
 
-[Demo](./diagrams/demo.mp4)
+[Demo Video](./diagrams/demo.mp4)
+
+
+
+https://github.com/user-attachments/assets/2bdb28d9-eb2d-42b4-a1e5-a6c7e3074831
+
+
 
 ## Contributing (Committing changes)
 
