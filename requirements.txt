@@ -1,0 +1,11 @@
+azure-ai-documentintelligence
+azure-ai-inference
+azure-ai-ml
+beautifulsoup4
+dotenv
+html2text
+markdown
+openai
+pypdf
+python-docx
+streamlit

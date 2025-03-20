@@ -1,0 +1,4 @@
+black[jupyter]
+ipykernel
+pre-commit
+pylint

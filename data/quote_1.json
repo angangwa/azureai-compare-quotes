@@ -1,0 +1,180 @@
+{
+  "Policy Overview": {
+    "Cover type": "Contents",
+    "Quote reference": "8048208602",
+    "Contents excess": {
+      "description": "The total sum you'll have to pay in the event of making a contents claim. The amount consists of a voluntary and compulsory excess.",
+      "Voluntary": "£250",
+      "Compulsory": "£50",
+      "Total excess": "£300"
+    },
+    "Key cover": {
+      "description": "Covers the costs of replacing and fitting new locks to windows and doors that lead outside, if your keys have been lost or stolen and your property's security is under threat. This doesn't include any additional upgrades to the policy that might be added separately.",
+      "Loss": "£1,000",
+      "Theft": "£1,000"
+    },
+    "Accidental damage (content)": {
+      "status": "Included",
+      "description": "Covers your contents for a one-off, unintentional event e.g spilling wine on the carpet or knocking over a vase. Insurers may offer different levels of cover. Always check policy documents for further information to make sure you have the necessary cover before buying."
+    },
+    "Personal possessions cover": {
+      "status": "Not included",
+      "description": "Covers items you normally carry away from home. Items that may be covered could include cameras, mobile phones or the contents of your bag."
+    }
+  },
+  "Contents Cover": {
+    "Contents cover": {
+      "amount": "£75,000",
+      "description": "The maximum contents cover the policy could provide. Your policy will provide either up to this amount or the amount you requested in your quote."
+    },
+    "Cover for unspecified valuables": {
+      "description": "The maximum amount you can claim for the loss or damage to a single high value item within the home, that you haven't specifically listed on your policy. This is in addition to any items you've listed separately on your policy. These can include antiques, stamp and medal collections, computers, games consoles, works of art, watches and jewellery.",
+      "Single item limit": "£2,000",
+      "Valuables total limit": "40% of contents sum insured"
+    },
+    "Accidental damage (contents)": {
+      "status": "Included",
+      "description": "Covers your contents for a one-off, unintentional event e.g. spilling wine on the carpet or knocking over a vase."
+    },
+    "Entertainment equipment": {
+      "status": "Optional with accidental damage",
+      "description": "Cover for accidental damage to TV, video, audio and other entertainment equipment caused by a one-off, unintentional event."
+    },
+    "Personal possessions cover": {
+      "status": "Not included",
+      "description": "Covers items you normally carry away from home. Items that may be covered could include cameras, mobile phones or the contents of your bag."
+    },
+    "Money": {
+      "description": "Cover for any cash if it's been lost or stolen either within, or away from home.",
+      "In the home": "£250",
+      "Outside of the home": "Not included"
+    },
+    "Credit cards": {
+      "description": "Cover if your credit cards end up lost or stolen either within, or away from home and have been fraudulently used.",
+      "In the home": "£250",
+      "Outside of the home": "Not included"
+    },
+    "Bikes (excluding any listed separately)": {
+      "description": "Cover for bikes within or away from home, that you haven't specifically listed on your policy. Events that may be covered typically include theft or damage up to the specified amount for each bike.",
+      "In the home": "£350",
+      "Outside of the home": "£350"
+    },
+    "Mobile phones": {
+      "description": "Cover for mobile phones within or away from home. Events that may be covered typically include theft or damage, up to the specified amount for each phone.",
+      "In the home": "£2,000",
+      "Outside of the home": "Not included"
+    },
+    "Student belongings": {
+      "status": "Not included",
+      "description": "If a member of your family is at university and temporarily living at another address, some insurers will provide cover for the belongings they keep with them under the same insurance policy and up to the specified amount."
+    },
+    "Damage by pets": {
+      "status": "Not included",
+      "description": "Cover for damage caused to your contents by domestic pets."
+    },
+    "Title deeds re-instatement": {
+      "amount": "£3,000",
+      "description": "Cover for the costs associated with reinstating the title deeds."
+    },
+    "Freezer cover": {
+      "status": "Included",
+      "description": "Cover in the event the contents of your freezer are spoiled. For example, your freezer defrosts due to a power cut."
+    }
+  },
+  "Legal Cover": {
+    "Legal cover": "£24.85 extra",
+    "Annual price": "£24.85",
+    "Monthly price": "£26.72 (total) split over installments",
+    "Legal expenses claim limit": {
+      "amount": "£100,000",
+      "description": "The maximum amount you can claim for the costs associated with a legal claim."
+    },
+    "Employment disputes": {
+      "status": "Included",
+      "description": "Cover for the costs associated with employment disputes provided as part of the legal cover option."
+    },
+    "Contract disputes": {
+      "status": "Included",
+      "description": "Cover for the costs associated with contract disputes, provided as part of the legal cover option."
+    },
+    "Bodily injury": {
+      "status": "Included",
+      "description": "Cover for the costs associated with bodily injury claims, provided as part of the legal cover option."
+    },
+    "Property protection": {
+      "status": "Included",
+      "description": "Cover for the costs associated with property protection claims, provided as part of the legal cover option."
+    },
+    "Tax protection": {
+      "status": "Included",
+      "description": "Cover for the costs associated with tax protection claims, provided as part of the legal cover option."
+    },
+    "Jury service": {
+      "status": "Included",
+      "description": "Cover for the loss of income associated with jury service, provided as part of the legal cover option."
+    },
+    "Legal defence": {
+      "status": "Not included",
+      "description": "Cover for the costs associated with legal defence claims, provided as part of the legal cover option."
+    },
+    "Clinical negligence": {
+      "status": "Included",
+      "description": "Cover for the costs associated with clinical negligence claims, provided as part of the legal cover option."
+    }
+  },
+  "Home Emergency Cover": {
+    "Home emergency cover": "£39.95 extra",
+    "Annual price": "£39.95",
+    "Monthly price": "£42.86 (total) split over installments",
+    "Home emergency claim limit": {
+      "amount": "£500",
+      "description": "The maximum amount you can claim for the costs associated with a home emergency call out, including the cost of labour and materials involved."
+    },
+    "Main heating system": {
+      "status": "Included",
+      "description": "Cover for the main heating system within the property. This is part of the home emergency cover option, you can check policy details to confirm the level of cover for your main heating system."
+    },
+    "Plumbing and drainage": {
+      "status": "Included",
+      "description": "Cover for the main plumbing and drainage at the property. This is part of the home emergency cover option, you can check policy details to confirm the level of cover for your main plumbing."
+    },
+    "Electric supply failure": {
+      "status": "Not included",
+      "description": "Cover for the failure of the electric supply within the property. This is part of the home emergency cover option."
+    },
+    "Gas supply failure": {
+      "status": "Not included",
+      "description": "Cover for the failure of the gas supply within the property. This is part of the home emergency cover option."
+    },
+    "Home security": {
+      "status": "Included",
+      "description": "Cover for home security incidents. This is part of the home emergency cover option."
+    },
+    "Vermin": {
+      "status": "Not included",
+      "description": "Cover for vermin. This is part of the home emergency cover option."
+    },
+    "Roof damage": {
+      "status": "Not included",
+      "description": "Cover for roof damage. This is part of the home emergency cover option."
+    }
+  },
+  "Garden and Outdoor": {
+    "Contents in the open": {
+      "status": "Not included",
+      "description": "Covers for contents left in the open that aren't normally left outside, up to the amount shown. For example garden furniture."
+    },
+    "Contents in the outbuildings": {
+      "limit": "Up to contents sum insured",
+      "description": "Covers for contents that you keep in outbuildings like a garage or shed, up to the amount shown."
+    },
+    "Theft from outbuildings": {
+      "status": "Not included",
+      "description": "Cover for the theft of contents that you keep in outbuildings, up to the amount shown."
+    },
+    "Plants in garden": {
+      "amount": "£1,000",
+      "description": "Cover for replacing plants in the garden following loss or damage due to an insured event."
+    }
+  }
+}
