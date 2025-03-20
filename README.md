@@ -74,7 +74,13 @@ Or skip directly to next part.
 
 [http://localhost:8501/](http://localhost:8501/)
 
-[Demo](./diagrams/demo.mp4)
+[Demo Video](./diagrams/demo.mp4)
+
+
+
+https://github.com/user-attachments/assets/2bdb28d9-eb2d-42b4-a1e5-a6c7e3074831
+
+
 
 ## Contributing (Committing changes)
 
