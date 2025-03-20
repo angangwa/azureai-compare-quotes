@@ -7,6 +7,7 @@ from utils.openai_helpers import get_completion, setup_client
 from utils.file_helpers import save_completion
 from utils.constants import COMPLETIONS_DIR
 from utils.document_extraction import extract_text
+from utils.document_extraction import is_document_intelligence_available
 
 
 def render(
@@ -32,21 +33,35 @@ def render(
         max_tokens (int): Maximum tokens for completion.
         save_completion_history (bool): Flag to save completion history.
     """
-    st.header("Run Completion")
+    # Initialize session state for storing completion data
+    if "completion_data" not in st.session_state:
+        st.session_state.completion_data = None
+    if "completion_generated" not in st.session_state:
+        st.session_state.completion_generated = False
 
-    # Show save status notification
-    if save_completion_history:
-        st.info(
-            "Completion history saving is enabled. Results will be saved in history."
-        )
-    else:
-        st.warning(
-            "Completion history saving is disabled. Results will not be saved in history."
-        )
+    st.header("Run Completion")
 
     # DOCUMENT SELECTION SECTION (moved to the top)
     st.subheader("1. Select Documents for Comparison")
-    st.markdown("Supported formats: **JSON**, **PDF**, **HTML**, **TXT**, **DOCX**")
+
+    # Updated supported formats to include all Document Intelligence formats
+    st.markdown(
+        "Supported formats: **PDF**, **JPEG**, **JPG**, **PNG**, **BMP**, **TIFF**, **DOCX**, **XLSX**, **PPTX**, **HTML**, **TXT**, **JSON**"
+    )
+
+    # Document Processing Options moved here
+    doc_intelligence_available = is_document_intelligence_available()
+    use_document_intelligence = st.checkbox(
+        "Use Azure Document Intelligence (better quality)",
+        value=doc_intelligence_available,  # Default to true if available
+        disabled=not doc_intelligence_available,
+        help="Uses Azure Document Intelligence for higher quality text extraction. Requires API credentials.",
+    )
+
+    if not doc_intelligence_available:
+        st.info(
+            "Azure Document Intelligence is not available. Set AZURE_DOCUMENT_INTELLIGENCE_ENDPOINT and AZURE_DOCUMENT_INTELLIGENCE_API_KEY environment variables to enable it."
+        )
 
     # Select data files
     col1, col2 = st.columns(2)
@@ -74,8 +89,14 @@ def render(
             # For other files, show preview in expander
             else:
                 with st.expander("Preview content"):
-                    content = extract_text(file_path)
-                    st.text(content[:1000] + ("..." if len(content) > 1000 else ""))
+                    # Pass the use_document_intelligence flag to extract_text for previews
+                    content = extract_text(
+                        file_path, use_document_intelligence=use_document_intelligence
+                    )
+                    st.markdown(
+                        content[:1000] + ("..." if len(content) > 1000 else ""),
+                        unsafe_allow_html=True,
+                    )
 
     with col2:
         # Set default index to 1 (second file) if multiple files exist, otherwise 0
@@ -106,8 +127,14 @@ def render(
             # For other files, show preview in expander
             else:
                 with st.expander("Preview content"):
-                    content = extract_text(file_path)
-                    st.text(content[:1000] + ("..." if len(content) > 1000 else ""))
+                    # Pass the use_document_intelligence flag to extract_text for previews
+                    content = extract_text(
+                        file_path, use_document_intelligence=use_document_intelligence
+                    )
+                    st.markdown(
+                        content[:1000] + ("..." if len(content) > 1000 else ""),
+                        unsafe_allow_html=True,
+                    )
 
     # SYSTEM MESSAGE SECTION (collapsed by default)
     st.subheader("2. Configure Prompt")
@@ -138,8 +165,14 @@ def render(
     quote2 = ""
     if data_files and data_file1 in data_files and data_file2 in data_files:
         try:
-            quote1 = extract_text(data_files[data_file1])
-            quote2 = extract_text(data_files[data_file2])
+            quote1 = extract_text(
+                data_files[data_file1],
+                use_document_intelligence=use_document_intelligence,
+            )
+            quote2 = extract_text(
+                data_files[data_file2],
+                use_document_intelligence=use_document_intelligence,
+            )
         except Exception as e:
             st.error(f"Error loading data files: {str(e)}")
 
@@ -157,7 +190,21 @@ def render(
 
     # Run completion
     st.subheader("3. Generate Comparison")
-    if st.button("Run Completion", type="primary", use_container_width=True):
+    # Show save status notification
+    if save_completion_history:
+        st.info(
+            "Completion history saving is enabled. Results will be saved in history."
+        )
+    else:
+        st.warning(
+            "Completion history saving is disabled. Results will not be saved automatically."
+        )
+
+    run_button_clicked = st.button(
+        "Run Completion", type="primary", use_container_width=True
+    )
+
+    if run_button_clicked:
         if not selected_model and not deployment_name:
             st.error("Please select a model or provide a deployment name")
         else:
@@ -182,22 +229,34 @@ def render(
                         model_name=model_id,
                     )
 
+                    # Store the completion data in session state
+                    st.session_state.completion_data = {
+                        "system_message": system_message_editor,
+                        "user_prompt": formatted_user_prompt,
+                        "completion": completion,
+                        "data_file1": data_file1,
+                        "data_file2": data_file2,
+                        "temperature": temperature,
+                        "max_tokens": max_tokens,
+                        "model": selected_model,
+                    }
+                    st.session_state.completion_generated = True
+
                     # Display completion
                     st.subheader("Completion Result")
                     st.markdown(completion)
 
                     # Save completion with model information only if enabled
                     if save_completion_history:
-                        completion_data = {
-                            "system_message": system_message_editor,
-                            "user_prompt": formatted_user_prompt,
-                            "completion": completion,
-                            "data_file1": data_file1,
-                            "data_file2": data_file2,
-                            "temperature": temperature,
-                            "max_tokens": max_tokens,
-                            "model": selected_model,
-                        }
-
-                        filename = save_completion(completion_data)
+                        filename = save_completion(st.session_state.completion_data)
                         st.success(f"Completion saved to {COMPLETIONS_DIR}/{filename}")
+
+    # Show manual save button if completiSSon was generated and auto-save is disabled
+    if st.session_state.completion_generated and not save_completion_history:
+        if st.button(
+            "💾 Save This Completion", type="secondary", key="manual_save_button"
+        ):
+            filename = save_completion(st.session_state.completion_data)
+            st.success(f"Completion manually saved to {COMPLETIONS_DIR}/{filename}")
+            # Reset the completion generated flag to avoid double saves
+            st.session_state.completion_generated = False

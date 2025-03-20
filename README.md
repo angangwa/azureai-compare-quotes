@@ -12,6 +12,19 @@ Use AI to compare insurance, or other financial quotes.
 4. Add and update system messages
 5. Add and update user prompts
 6. Manage completion history
+7. Extract high-quality text from documents using Azure Document Intelligence
+
+## Azure Document Intelligence
+
+The app supports document extraction using Azure Document Intelligence, which provides:
+- Higher quality text extraction from PDF and other documents
+- Better formatting preservation
+- Support for more file formats (PDF, JPEG, JPG, PNG, BMP, TIFF, DOCX, XLSX, PPTX, HTML)
+
+To enable Azure Document Intelligence:
+1. Create an Azure Document Intelligence resource in your Azure account
+2. Add the endpoint and API key to your `.env` file (see quick start section)
+3. The app will automatically detect and use Document Intelligence if available
 
 ## Quick Start (commands for git bash on Windows)
 
@@ -23,6 +36,10 @@ Create a new file `.env` with API keys and region details from Azure AI Speech t
 AZURE_OPENAI_ENDPOINT=<>
 AZURE_OPENAI_API_KEY=<>
 AZURE_OPENAI_DEPLOYMENT_NAME=gpt-4o-mini
+
+# Optional - Azure Document Intelligence (for better document parsing)
+AZURE_DOCUMENT_INTELLIGENCE_ENDPOINT=<>
+AZURE_DOCUMENT_INTELLIGENCE_API_KEY=<>
 ```
 
 Optional - if you want to try out other models. You can add additional model details to your `.env` file.
@@ -77,9 +94,6 @@ Or skip directly to next part.
 [Demo](./diagrams/demo.mp4)
 
 ## Contributing (Committing changes)
-
-
-
 
 Install pre-commit for basic checks and fixes before commit.
 

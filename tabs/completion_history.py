@@ -35,10 +35,20 @@ def render(_):
             # Display completion details with formatted timestamp
             timestamp = data.get("timestamp", "N/A")
             formatted_time = format_timestamp(timestamp)
-            st.markdown(f"**Timestamp:** {formatted_time}")
-            st.markdown(f"**Model:** {data.get('model', 'N/A')}")
-            st.markdown(f"**Quote 1:** {data.get('data_file1', 'N/A')}")
-            st.markdown(f"**Quote 2:** {data.get('data_file2', 'N/A')}")
+
+            # Create two columns for metadata to improve organization
+            col1, col2 = st.columns(2)
+
+            with col1:
+                st.markdown(f"**Timestamp:** {formatted_time}")
+                st.markdown(f"**Model:** {data.get('model', 'N/A')}")
+                st.markdown(f"**Quote 1:** {data.get('data_file1', 'N/A')}")
+                st.markdown(f"**Quote 2:** {data.get('data_file2', 'N/A')}")
+
+            with col2:
+                # Add temperature and max_tokens metadata
+                st.markdown(f"**Temperature:** {data.get('temperature', 'N/A')}")
+                st.markdown(f"**Max Tokens:** {data.get('max_tokens', 'N/A')}")
 
             # Use tabs instead of nested expanders
             content_tabs = st.tabs(
