@@ -13,6 +13,8 @@ Use AI to compare insurance, or other financial quotes.
 5. Add and update user prompts
 6. Manage completion history
 
+![screenshot](./diagrams/screenshot.png)
+
 ## Quick Start (commands for git bash on Windows)
 
 ### 1. Create `.env` file locally
